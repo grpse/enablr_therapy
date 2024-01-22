@@ -160,7 +160,7 @@ const WeekCalendar: FC<{
   );
   const currentSelectedId = value?.id;
 
-  const nextWeek = () => {
+  const nextDay = () => {
     setStartDate(
       new Date(
         startDate.getFullYear(),
@@ -170,7 +170,7 @@ const WeekCalendar: FC<{
     );
   };
 
-  const previousWeek = () => {
+  const previousDay = () => {
     setStartDate(
       new Date(
         startDate.getFullYear(),
@@ -223,7 +223,7 @@ const WeekCalendar: FC<{
               <TableRow className="b-bo flex flex-row gap-2 justify-evenly content-center items-center h-14 w-full">
                 <TableHead className="p-0 m-0 flex justify-center content-center items-center">
                   <button
-                    onClick={previousWeek}
+                    onClick={previousDay}
                     className={cn(
                       "w-8 h-8 flex justify-center content-center items-center",
                       {
@@ -250,7 +250,7 @@ const WeekCalendar: FC<{
                 ))}
                 <TableHead className="p-0 m-0 flex justify-center content-center items-center">
                   <button
-                    onClick={nextWeek}
+                    onClick={nextDay}
                     className="w-8 h-8 flex justify-center content-center items-center"
                   >
                     <ChevronRight color="#D5DBE0" />

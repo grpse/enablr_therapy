@@ -48,6 +48,7 @@ type Schedule {
 
 type Query {
   availability: Availability!
+  schedules(take: Float!): [Schedule!]!
 }
 
 type Mutation {

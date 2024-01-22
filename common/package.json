@@ -1,0 +1,14 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "mkdir -p ../backend/src/common && cp -r ./src/* ../backend/src/common; mkdir -p ../frontend/src/common && cp -r ./src/* ../frontend/src/common"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}

@@ -1,0 +1,64 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Service {
+  id: String!
+  name: String!
+}
+
+type ServiceByReason {
+  service: String!
+  id: String!
+  name: String!
+}
+
+type Location {
+  id: String!
+  name: String!
+}
+
+type TimeSlot {
+  id: String!
+  start: DateTime!
+  end: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Availability {
+  services: [Service!]!
+  reasonsByService: [ServiceByReason!]!
+  locations: [Location!]!
+  calendar: [TimeSlot!]!
+}
+
+type Schedule {
+  id: ID!
+  service: String!
+  reason: String!
+  location: String!
+  seenProvider: Boolean!
+  start: DateTime!
+  end: DateTime!
+}
+
+type Query {
+  availability: Availability!
+}
+
+type Mutation {
+  bookSchedule(scheduleData: ScheduleCreateInput!): Schedule!
+}
+
+input ScheduleCreateInput {
+  service: String!
+  reason: String!
+  location: String!
+  seenProvider: Boolean
+  start: DateTime!
+  end: DateTime!
+}

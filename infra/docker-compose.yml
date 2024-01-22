@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  nginx:
+    image: nginx:latest
+    restart: always
+    container_name: nginx-enablr
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    container_name: postgres-enablr
+    environment:
+      POSTGRES_DB: enablr
+      POSTGRES_USER: enablr
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    # command: --init-file /docker-entrypoint-initdb.d/init.sql

@@ -29,6 +29,9 @@ cd backend && npm run start:dev
 cd frontend && npm run dev --turbo
 ```
 
+- using nginx to route through the same port
+accessible in the browser via http://localhost:4000
+
 ### Frontend decisions
 
 - Divider into 3 layers

@@ -37,6 +37,11 @@ const bookingFormSchema = z.object({
 
 export type TBookingForm = z.infer<typeof bookingFormSchema>;
 
+/**
+ * The booking form here was used to receive the values loaded outside
+ * so it can be more independent from how it is querying and mutating
+ * the data.
+ */
 const BookingForm: FC<TAvailabilityData & {
   onBook: (data: TBookingForm) => void;
 }> = ({ services, reasonsByService, locations, calendar, onBook }) => {

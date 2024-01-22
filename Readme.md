@@ -28,3 +28,16 @@ cd backend && npm run start:dev
 ...
 cd frontend && npm run dev --turbo
 ```
+
+### Frontend decisions
+
+- Divider into 3 layers
+  - ui - for ui library (using shadcn) to handle basic components
+  - design-system - match the styles and common operations by the system
+  - components general - uses the design system components to build use cases
+- Using react hook form to handle the booking form while making the general components invert the dependencies to the interface needed to operate with this library.
+
+### Backend
+
+- Availability resolver with filter of the already scheduled
+- Booking resolver to receive booking data and inserting the database row

@@ -145,6 +145,14 @@ const getTimeSlotsForDay = (timeSlots: TTimeSlot,date: TISOString, maxSlotsOfThe
     : slotsOfTheDay;
 };
 
+/**
+ * WeekCalendar can allow navigating in the future, day by day.
+ *
+ * It transforms the availability list to ease the process of displaying
+ * and manipulating the time slots.
+ *
+ * It was made to be independent of the implementation of the form handler.
+ */
 const WeekCalendar: FC<{
   calendar: Array<TAvailability>;
   value?: TAvailability;
